@@ -96,7 +96,7 @@ DESIGN-2
 - Dc power supply
 
  **CIRCUIT DIAGRAM**
- ![**CIRCUIT DIAGRAM**](
+ ![**CIRCUIT DIAGRAM**](https://github.com/srujanjainhn/LIC-LAB/blob/0c6f26682a0c1e2967b3a705e3eddcc021bd3906/images/Screenshot%202025-02-17%20215921.png)
  
 
 ### **PMOS CONFIGURATION:**
@@ -133,7 +133,7 @@ ID = 50μW / 1.8V
 
 ID = 27.7μA
 
-![image](https://github.com/user-attachments/assets/d6d205ae-471e-4308-a485-daf4ba1ae641)
+![image]()
 
 
 ![image](https://github.com/user-attachments/assets/48f7fcaa-5047-41d5-b093-3463933ad5a5)
