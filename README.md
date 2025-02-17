@@ -1,4 +1,4 @@
- EXPERIMENT 1 :    Analysis of CS amplifier
+ DESIGN  1 :    Analysis of CS amplifier
 
 **AIM**: To explore how a MOSFET-based Common Source (CS) Amplifier works by simulating it in LTspice. We will check how the circuit behaves in different conditions—measuring voltage, current, and power. By tweaking the MOSFET's size (channel width & length), we will observe how the performance changes, just like adjusting the size of a water pipe to control flow
 
@@ -78,3 +78,22 @@ Circuit Stability:
 Transient Response: The amplifier transitions smoothly over time, meaning it reacts well to changes in input signals.
 AC Response: The circuit remains stable across different frequencies, proving its reliability in signal processing.
 Gain & Phase Shift: The amplifier provides a 4 dB gain and an almost 180° phase shift, which matches theoretical expectations. This confirms that the circuit is working efficiently under AC conditions.
+
+
+
+
+
+
+DESIGN-2
+
+**AIM**: To obtain DC analysis and Transient analysis and AC analysis for the given circuit 
+
+**COMPONENTS**
+- Mosfet M1
+ 
+- Mosfet M2
+  
+- Dc power supply
+
+  
+
