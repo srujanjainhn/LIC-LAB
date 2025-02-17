@@ -35,7 +35,7 @@ Without it, many everyday electronics wouldn’t work as effectively!.
 - Given the power budget as 50uW now we have **P=VDD x ID**, since VDD is fixed we get the value of ID 
 - Now assume the suitable values for lenth and width such that the resulting current value should be almost nearer to the above calculated value.
 ---
-### *Transient analysis*: - 
+### *TRANSIENT ANALYSIS*: - 
 - set input voltage sine wave 1khz 50mv and dc offset value 0.9v 
 - simulate-> transient, set stop time 5ms and run simulation 
 ### *AC analysis*
@@ -43,23 +43,23 @@ Without it, many everyday electronics wouldn’t work as effectively!.
 - from this obtain gain and bandwidth 
 
 
-## **Results**
+## **RESULTS**
 
-**DC analysis**:
+**DC ANALYSIS**:
 
 
 ![**DC Analysis**](https://github.com/srujanjainhn/LIC-LAB/blob/8cb36b8edce8c55e7a91dcbcea7403ec368539fa/images/2.png)
 
 
 
-**transient analysis**
+**TRANSIENT ANALYSIS**
 
 ![**Transient Analysis**](https://github.com/srujanjainhn/LIC-LAB/blob/d389bac9b89a6a346d48e85acecaab7bdad2214f/images/4.png)
 
 
 
 
-**frequency analysis**
+**FREQUENCY ANALYSIS**
 
 ![**ac  Analysis**](https://github.com/srujanjainhn/LIC-LAB/blob/242ceda5e8886cc2ab84fad5da4670e2812ba61f/images/3.png)
 
@@ -94,6 +94,101 @@ DESIGN-2
 - Mosfet M2
   
 - Dc power supply
+
+ **CIRCUIT DIAGRAM**
+ ![**CIRCUIT DIAGRAM**](
+ 
+
+### **PMOS CONFIGURATION:**
+
+- **Source:** Connected to supply (**1.8V**)  
+- **Gate:** Connected to **0.9V**  
+- **Drain:** Connected to NMOS drain.  
+
+### **NMOS CONFIGURATION:**
+
+- **Source:** Grounded.  
+- **Gate:** Connected to **0.9V**.  
+- **Drain:** Connected to PMOS drain.  
+
+### **Chosen Transistor Dimensions:**
+
+PMOS (W/L): 0.61μm / 180nm 
+
+NMOS (W/L): 0.61μm / 180nm
+
+## **DC Analysis**
+
+Our approach in conducting DC analysis involves identifying the quiescent operating point (ID) and node voltages that are required to operate the MOSFET.
+
+- **Supply Voltage (VDD)**: 1.8V  
+- **Gate Voltage (VG)**: 0.9V  
+- **Power Budget (P)**: 50μW  
+
+P = VDD * ID
+
+ID = P/VDD
+
+ID = 50μW / 1.8V
+
+ID = 27.7μA
+
+![image](https://github.com/user-attachments/assets/d6d205ae-471e-4308-a485-daf4ba1ae641)
+
+
+![image](https://github.com/user-attachments/assets/48f7fcaa-5047-41d5-b093-3463933ad5a5)
+
+
+## **AC Analysis**
+
+A sinusoidal input is included in the AC analysis through a modification of gate voltage.
+
+**Sinusoidal Input Voltage**
+
+- DC Offset: 0.9V  
+- Amplitude: 50mV  
+- Frequency: 1kHz
+
+**Frequency Sweep Parameters**
+
+- Type: Decade  
+- Sweeps per Decade: 20  
+- Start Frequency: 0.1Hz  
+- Stop Frequency: 1THz  
+
+By analyzing the AC, one can determine gain, bandwidth, phase, and other characteristics of the amplifier's frequency response.
+
+![image](https://github.com/user-attachments/assets/6c1c2fa0-3277-4d41-89bb-8a3d2d9f0fd3)
+
+
+## **Transient Analysis**
+
+By examining the transient response of the amplifier, it is possible to determine its behavior over time when subjected to the sinusoidal input.
+
+**Parameters**
+
+- Stop Time: 5m (5 milliseconds)
+
+The transient analysis provides information about the amplifier's time-domain behavior, such as distortion, settling time, and waveform reproduction.
+
+![image](https://github.com/user-attachments/assets/df581cd7-ab33-4d89-8274-4c75ef71b52b)
+
+
+## **Inference**
+
+**DC Analysis**
+
+- The drain current (ID) required is approximately 27.78A, which should ensure the MOSFET operates correctly at its desired location.
+- The conditions of biasing offer a reliable means of amplification.
+
+**AC Analysis**
+
+- The gain response and bandwidth can be analyzed using the AC sweep.
+- The amplifier's performance across a broad frequency range, including its cutoff frequencies and phase behavior, will be taken into account when determining its suitability for various applications.
+
+**Transient Analysis**
+
+- The input waveform is accurately reproduced by the amplifier, as demonstrated.
 
   
 
