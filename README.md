@@ -21,6 +21,7 @@ Without it, many everyday electronics wouldn’t work as effectively!.
 **CIRCUIT DIAGRAM**
 
 ![**CIRCUIT DIAGRAM**](https://github.com/srujanjainhn/LIC-LAB/blob/41348dee186eee422369f0f0c53d30a37656ee31/images/1.png)
+![**CIRCUIT DIAGRAM**](https://github.com/srujanjainhn/LIC-LAB/blob/46f08e77dc1e594cd0b091be463bc956dff6eaa9/images/Screenshot%202025-02-17%20220403.png)
 
  
  **PROCEDURE**:
