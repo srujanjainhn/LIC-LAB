@@ -1,4 +1,4 @@
- EXPERIMENT 1 :    CS AMPLIFIER
+ EXPERIMENT 1 :    Analysis of CS amplifier
 
 **AIM**: To explore how a MOSFET-based Common Source (CS) Amplifier works by simulating it in LTspice. We will check how the circuit behaves in different conditions—measuring voltage, current, and power. By tweaking the MOSFET's size (channel width & length), we will observe how the performance changes, just like adjusting the size of a water pipe to control flow
 
