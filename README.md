@@ -176,19 +176,18 @@ The transient analysis provides information about the amplifier's time-domain be
 
 ## **Inference**
 
-**DC Analysis**
+DC Analysis
 
-- The drain current (ID) required is approximately 27.78A, which should ensure the MOSFET operates correctly at its desired location.
-- The conditions of biasing offer a reliable means of amplification.
+-The drain current (ID) required is around 27.78A, which ensures that the MOSFET operates correctly in its desired region.
+The biasing conditions are well set up, providing a stable and reliable way for amplification to take place.
 
-**AC Analysis**
+AC Analysis
 
-- The gain response and bandwidth can be analyzed using the AC sweep.
-- The amplifier's performance across a broad frequency range, including its cutoff frequencies and phase behavior, will be taken into account when determining its suitability for various applications.
+-The gain response and bandwidth can be understood by performing an AC sweep of the circuit.
+The amplifier's performance is analyzed across a wide frequency range, including its cutoff frequencies and phase behavior, to determine if it fits well for different applications.
 
-**Transient Analysis**
+Transient Analysis
 
-- The input waveform is accurately reproduced by the amplifier, as demonstrated.
+-The amplifier effectively reproduces the input waveform, showing that it accurately follows the signal without distortion.
 
-  
 
