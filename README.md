@@ -133,10 +133,8 @@ ID = 50μW / 1.8V
 
 ID = 27.7μA
 
-![image]()
+![DC ANALYSIS](https://github.com/srujanjainhn/LIC-LAB/blob/d7bb35f27367ae95c2ed0fd0b2144d6a0f60b8dd/images/Screenshot%202025-02-17%20215901.png)
 
-
-![image](https://github.com/user-attachments/assets/48f7fcaa-5047-41d5-b093-3463933ad5a5)
 
 
 ## **AC Analysis**
@@ -158,7 +156,7 @@ A sinusoidal input is included in the AC analysis through a modification of gate
 
 By analyzing the AC, one can determine gain, bandwidth, phase, and other characteristics of the amplifier's frequency response.
 
-![image](https://github.com/user-attachments/assets/6c1c2fa0-3277-4d41-89bb-8a3d2d9f0fd3)
+![AC ANALYSIS]()
 
 
 ## **Transient Analysis**
