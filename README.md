@@ -17,7 +17,7 @@
 
 **CIRCUIT DIAGRAM**
 
-![**CIRCUIT DIAGRAM**](https://github.com/user-attachments/assets/6a264d54-8c24-48e5-b80f-b56bb802bf07)
+![**CIRCUIT DIAGRAM**](https://github.com/srujanjainhn/LIC-LAB/blob/41348dee186eee422369f0f0c53d30a37656ee31/images/1.png)
 
  
  **PROCEDURE**:
