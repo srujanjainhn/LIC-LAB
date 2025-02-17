@@ -20,7 +20,7 @@ Without it, many everyday electronics wouldn’t work as effectively!.
 
 **CIRCUIT DIAGRAM**
 
-![**CIRCUIT DIAGRAM**](https://github.com/srujanjainhn/LIC-LAB/blob/41348dee186eee422369f0f0c53d30a37656ee31/images/1.png)
+![**CIRCUIT DIAGRAM**](https://github.com/srujanjainhn/LIC-LAB/blob/85c4f949939d11c1eddc48370c4a07fcf28c5533/images/pp4.png)
 
 
  
