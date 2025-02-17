@@ -51,7 +51,7 @@
 
 **transient analysis**
 
-![**Transient Analysis**]()
+![**Transient Analysis**](https://github.com/srujanjainhn/LIC-LAB/blob/d389bac9b89a6a346d48e85acecaab7bdad2214f/images/4.png)
 
 
 
