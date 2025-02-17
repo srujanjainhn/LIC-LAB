@@ -67,3 +67,14 @@ Without it, many everyday electronics wouldn’t work as effectively!.
 
 
 ## INFERENCE 
+MOSFET in Saturation: Since we are using the MOSFET as an amplifier, it must operate in the saturation region to function correctly. We ensure this by maintaining the right voltage conditions.
+
+Effect of Width and Length on Current: Increasing the width of the MOSFET increases the current, while increasing the length decreases it. However, doubling the width doesn't exactly double the current due to channel length modulation, which slightly reduces the expected increase.
+
+Power Calculation: The circuit consumes 50 µW of power, calculated using the formula P = I × V with the given values (Id = 27.08 µA, Vdd = 1.8V).
+
+Circuit Stability:
+
+Transient Response: The amplifier transitions smoothly over time, meaning it reacts well to changes in input signals.
+AC Response: The circuit remains stable across different frequencies, proving its reliability in signal processing.
+Gain & Phase Shift: The amplifier provides a 4 dB gain and an almost 180° phase shift, which matches theoretical expectations. This confirms that the circuit is working efficiently under AC conditions.
