@@ -58,7 +58,7 @@
 
 **frequency analysis**
 
-![**ac  Analysis**](https://github.com/shivaanii33/LIC-Lab/blob/02d000ddcff2812b2899f742c7bd16ddf72aca53/images/Screenshot%202025-02-17%20200800.png)
+![**ac  Analysis**](https://github.com/srujanjainhn/LIC-LAB/blob/242ceda5e8886cc2ab84fad5da4670e2812ba61f/images/3.png)
 
 
 
