@@ -45,7 +45,7 @@
 **DC analysis**:
 
 
-![**DC Analysis**]()
+![**DC Analysis**](https://github.com/srujanjainhn/LIC-LAB/blob/8cb36b8edce8c55e7a91dcbcea7403ec368539fa/images/2.png)
 
 
 
