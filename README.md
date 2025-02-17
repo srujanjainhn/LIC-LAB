@@ -156,7 +156,7 @@ A sinusoidal input is included in the AC analysis through a modification of gate
 
 By analyzing the AC, one can determine gain, bandwidth, phase, and other characteristics of the amplifier's frequency response.
 
-![AC ANALYSIS]()
+![AC ANALYSIS](https://github.com/srujanjainhn/LIC-LAB/blob/e4b988a20519e4edff634803c124dffaf29c599b/images/Screenshot%202025-02-17%20220318.png)
 
 
 ## **Transient Analysis**
@@ -169,7 +169,7 @@ By examining the transient response of the amplifier, it is possible to determin
 
 The transient analysis provides information about the amplifier's time-domain behavior, such as distortion, settling time, and waveform reproduction.
 
-![image](https://github.com/user-attachments/assets/df581cd7-ab33-4d89-8274-4c75ef71b52b)
+![TRANSIENT ANALYSIS]()
 
 
 ## **Inference**
