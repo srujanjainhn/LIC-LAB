@@ -97,6 +97,7 @@ DESIGN-2
 
  **CIRCUIT DIAGRAM**
  ![**CIRCUIT DIAGRAM**](https://github.com/srujanjainhn/LIC-LAB/blob/0c6f26682a0c1e2967b3a705e3eddcc021bd3906/images/Screenshot%202025-02-17%20215921.png)
+ ![**CIRCUIT DIAGRAM**]()
  
 
 ### **PMOS CONFIGURATION:**
@@ -169,7 +170,7 @@ By examining the transient response of the amplifier, it is possible to determin
 
 The transient analysis provides information about the amplifier's time-domain behavior, such as distortion, settling time, and waveform reproduction.
 
-![TRANSIENT ANALYSIS]()
+![TRANSIENT ANALYSIS](https://github.com/srujanjainhn/LIC-LAB/blob/98b7459b869eec9f9cb8a5f61014aa693fa5a2a6/images/Screenshot%202025-02-17%20220129.png)
 
 
 ## **Inference**
