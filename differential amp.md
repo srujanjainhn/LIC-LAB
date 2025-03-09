@@ -182,4 +182,137 @@ From the graph gain in dB scale is
 20log(3.143)=9.94dB
 
 
+## Circuit 3
+
+### Differential Amplifier with NMOS Current Source Biasing
+
+In this circuit, we've upgraded the typical differential amplifier by replacing the traditional tail resistor with an NMOS transistor (M3), which acts as a current source. This change improves the stability and control of the bias current for the differential pair (M1 and M2), leading to a more consistent operating point and better common-mode rejection.
+
+By using an active NMOS current source, the circuit becomes more accurate and stable when amplifying the difference between the input signals (V2 and V1). This setup ensures the bias current is more tightly regulated, which is especially important for applications that require precise signal processing and strong resistance to unwanted noise that affects both inputs equally. While the core function of amplifying the difference between the inputs remains the same, the active biasing approach enhances the circuit’s overall performance and reliability.
+
+## Circuit Diagram
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/cf383d49f9030ee4a1b6ad34ec1a34e779be0667/images/images./4.1.jpg)
+
+## DC Analysis
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/cf383d49f9030ee4a1b6ad34ec1a34e779be0667/images/images./4.2.png)
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/5df19382ae45936abbe12fb0b4720941fb714f2d/images/4.5.png)
+
+
+Mosfet aspect ratio was same ie, L= 180nm, W = 2.0549um
+
+for mosfet M1 & M2:
+
+Vicm = 1.72V
+
+Vocm = 1.81V
+
+Id= 0.37mA
+
+Vtn = 0.487v
+
+VDD = IdRd + VDS +Vp
+
+VDS =3.3 - 1.454 - 0.7
+
+VDS = 1.146 V
+
+The Q-point of both the mosfets are (1.146V, 0.37mA).
+
+
+## Transient Analysis
+
+
+**Input and Output Waveform**
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/5df19382ae45936abbe12fb0b4720941fb714f2d/images/images./4.3.png)
+
+From the above observation
+Gain Av=Vout(peak)/Vin(peak)
+Av= 0.3126/0.0974 = 3.209V/V
+Converting it to the decibel(dB):
+20log(3.209) = 10.127 dB
+
+
+## AC Analysis
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/5df19382ae45936abbe12fb0b4720941fb714f2d/images/images./4.4.png)
+
+
+From the graph gain in dB scale is
+20log(3.209)=10.127dB
+
+### Inference: Impact of Different Tail Current Sources in a Differential Amplifier
+
+#### **With Resistor (Rss) as the Tail Current Source:**
+
+**Moderate Differential Gain:**  
+The differential gain is limited when using a resistor (Rss) as the tail current source. The amount of current flowing through the differential pair depends on the resistance value, which ultimately limits the amount of amplification the circuit can provide.
+
+**Reason:** A resistor doesn’t actively regulate the current, so it directly controls the flow of current through the differential pair. This limitation restricts how much gain can be achieved.
+
+**Limited Output Voltage Swing:**  
+The output voltage swing is also restricted because of the voltage drop across the tail resistor. As the output voltage nears the supply voltage, the current through the resistor drops, limiting the available range for the output signal.
+
+**Reason:** The voltage drop across Rss reduces the supply voltage available for the output, meaning the output signal can’t swing as far before hitting the supply limits.
+
+**Lower Common-Mode Rejection Ratio (CMRR):**  
+With a resistor, the CMRR is lower because the tail resistor provides lower impedance, making the circuit more vulnerable to common-mode signals.
+
+**Reason:** The low impedance of Rss allows common-mode signals to affect both sides of the differential pair similarly, making it harder for the circuit to reject unwanted noise.
+
+---
+
+#### **With an Ideal Current Source (Iss) as the Tail Current Source:**
+
+**Higher Differential Gain:**  
+When an ideal current source is used, the tail current stays constant, which improves the differential gain by ensuring a steady current supply to the differential pair.
+
+**Reason:** The constant tail current allows the differential pair to operate more effectively, resulting in greater amplification of the input signals.
+
+**Better Output Voltage Swing:**  
+An ideal current source eliminates the voltage drop issues that occur with resistors, giving the circuit a broader output voltage range.
+
+**Reason:** Unlike a resistor, an ideal current source doesn’t cause a significant voltage drop, so there’s more headroom for the output signal to swing without hitting supply limits.
+
+**Higher CMRR:**  
+An ideal current source offers high impedance, which enhances the circuit's ability to reject common-mode noise, making it less affected by external interference.
+
+**Reason:** The high impedance helps keep the tail current stable, ensuring that variations in power supply or common-mode signals don’t affect the differential pair, improving noise rejection.
+
+---
+
+#### **With NMOS Transistor as the Tail Current Source:**
+
+**Maximum Differential Gain:**  
+Using an NMOS transistor as the tail current source provides the highest differential gain. The NMOS transistor actively regulates the tail current with high impedance, keeping the circuit more stable and allowing for the maximum possible gain.
+
+**Reason:** The NMOS current source ensures the tail current is regulated and remains constant, allowing the differential pair to stay optimally biased and achieve the highest gain.
+
+**Widest Output Voltage Swing:**  
+An NMOS current source minimizes the voltage loss in the tail, allowing for the largest possible output signal swing.
+
+**Reason:** Unlike a resistor, the NMOS current source has a much lower voltage drop, preserving more of the supply voltage for the output signal to swing over a wider range.
+
+**Best CMRR:**  
+The NMOS current source provides the highest impedance, leading to the best common-mode rejection ratio. This results in the greatest isolation from supply fluctuations and external noise.
+
+**Reason:** The high impedance of the NMOS transistor helps keep the tail current stable, preventing common-mode signals from affecting the differential pair, resulting in superior noise rejection.
+
+---
+
+### **Summary of Reasons:**
+
+**Resistor (Rss):**  
+- Limits current flow, which restricts differential gain.  
+- Causes a voltage drop, reducing the output swing.  
+- Low impedance makes the circuit more sensitive to common-mode noise.
+
+**Ideal Current Source:**  
+- Supplies a constant current, improving differential gain.  
+- Eliminates voltage drop issues, allowing for a wider output swing.  
+- High impedance helps improve common-mode rejection.
+
+**NMOS Current Source:**  
+- Acts as an active, high-impedance source, optimizing differential gain.  
+- Minimizes voltage loss, providing the widest output swing.  
+- Offers the best isolation from interference, resulting in the highest CMRR.
+
 
