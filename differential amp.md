@@ -315,4 +315,18 @@ The NMOS current source provides the highest impedance, leading to the best comm
 - Minimizes voltage loss, providing the widest output swing.  
 - Offers the best isolation from interference, resulting in the highest CMRR.
 
+##  Summary of Performance Comparison
+
+| Tail Current Source  | Gain | Output Swing | CMRR |
+|----------------------|------|-------------|------|
+| **Resistor (Rss)**  | Moderate | Limited | Low |
+| **Ideal Current Source (Iss)**  | Higher | Improved | Better |
+| **NMOS Current Source**  | Highest | Best | Maximum |
+
+###  **Key Takeaways:**
+- **A resistor limits performance** due to voltage drop and low impedance.
+- **An ideal current source improves gain, output swing, and CMRR.**
+- **An NMOS current source gives the best performance** in all aspects.
+ **For high-performance differential amplifiers, replacing Rss with an NMOS current source is the best choice!**
+
 
