@@ -128,3 +128,58 @@ From the graph gain in dB scale is
 20log(1.251)=1.9451dB
 
 
+## Circuit 2
+By replacing resistor (R3) with a current source (Iss), the circuit is transformed into a fully differential pair with an active current source. This change removes source degeneration, which boosts the amplifier's gain and improves its ability to reject common-mode signals (CMRR). The current source helps maintain a stable bias current, making the circuit less sensitive to variations in component values. Without (R3), the transconductance (gm) becomes higher, leading to a greater differential gain, which is given by the formula (Ad = gm * rd). In simpler terms, the current source ensures the circuit runs more reliably and efficiently, providing better performance overall.
+
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/9b45c61b757819528fd6fd0834e27d98d7c61d1a/images/images./25.jpg)
+
+## DC Analysis
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/9b45c61b757819528fd6fd0834e27d98d7c61d1a/images/images./26.png)
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/9b45c61b757819528fd6fd0834e27d98d7c61d1a/images/images./27.png)
+
+
+Mosfet aspect ratio was same ie, L= 180nm, W = 2.0553um
+
+for mosfet M1 & M2:
+
+Vicm = 1.72V
+
+Vocm = 1.81V
+
+Id= 0.37mA
+
+Vtn = 0.487v
+
+VDD = IdRd + VDS +Vp
+
+VDS =3.3 - 1.454 - 0.7
+
+VDS = 1.146 V
+
+The Q-point of both the mosfets are (1.146V, 0.37mA).
+
+
+## Transient Analysis
+
+
+**Input and Output Waveform**
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/9b45c61b757819528fd6fd0834e27d98d7c61d1a/images/images./21.png)
+
+From the above observation
+Gain Av=Vout(peak)/Vin(peak)
+Av= 0.3156/0.1004 = 3.143 V/V
+Converting it to the decibel(dB):
+20log(3.143) = 9.94 dB
+
+
+## AC Analysis
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/9b45c61b757819528fd6fd0834e27d98d7c61d1a/images/images./24.png)
+
+From the graph gain in dB scale is
+20log(3.143)=9.94dB
+
+
+
