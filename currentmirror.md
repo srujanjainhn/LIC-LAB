@@ -90,6 +90,3 @@ For a reference current of **Iref = 100µA**, the following results were observe
 - **Shorter channel lengths** (higher W/L ratios) show more deviation from the expected value. For instance, with W/L = 500n/500n, Iout drops significantly to 10.715μA, which is much lower than expected. This happens because shorter channels have larger variations due to the **channel length modulation effect**.
 - **Longer transistors** (increased L) show more stability. As L increases, the gate voltage Vx decreases, which stabilizes the output current (Iout).
 
----
-
-This explanation should give you a clear idea of how a current mirror works, its key principles, and the results of the simulation. Let me know if you need further clarification or have any additional questions!
