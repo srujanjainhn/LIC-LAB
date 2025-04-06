@@ -1,7 +1,3 @@
-Sure! Here's a more human-friendly version of your explanation with simplified language and a more conversational tone:
-
----
-
 ### **Current Mirror Overview**
 
 A **current mirror** is a crucial component in analog circuits, designed to replicate a reference current from one transistor to another. It's used in many circuits such as biasing systems, active loads, and differential amplifiers. In essence, it helps maintain a stable current flow (Iref = Iout), ensuring that the current at the output is as close to the reference current as possible.
@@ -10,7 +6,6 @@ Here’s a simple illustration to understand how it works:
 
 ![Current Mirror Diagram](https://github.com/user-attachments/assets/1768da11-0189-48ea-9dc7-6f677b3c4609)
 
----
 
 ### **How a Current Mirror Works:**
 
