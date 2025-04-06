@@ -56,253 +56,424 @@ The main thing to ensure here is that the first transistor (M1) operates in **sa
 
 ---
 
-## Simulation 
+## Aim : Design and Analyze Current mirror circuit as active load in amplifier circuit.
 
-<br>**For 1:1 Aspect Ratio**</br>
-Part A : <p>Design a current mirror circuit which has a gain of AV = -10V/V, power supply of Vdd = 1.8V, and power of P <= 1mW. Find reference current (Iref), output current (Id), and total current (Itotal). Perform DC and AC analysis for mirror ratio 1:1, 1:2.</p>
-![Image](https://github.com/user-attachments/assets/4fcd86ec-967b-4d96-98ed-6e4da85dbf7c)
-  -  The MOSFET should be in saturation region 
-<table>
-<td>V1>V<sub>th</sub></td>
-</table>
-i.e 0.5>0.366
- 
-  -  I<sub>taotal</sub>=P/V<sub>dd</sub>
-<table>
-<td>I<sub>total</sub>=0.55mA</td>
-</table>
-I<sub>total</sub>=I<sub>ref</sub> + I<sub>p</sub>
-I<sub>ref</sub>=I<sub>p</sub>=(I<sub>total</sub>)/2
-<table>
-<td>I<sub>ref</sub>=I<sub>p</sub>=0.27mA</td>
-</table>
+Given :
 
-![Image](https://github.com/user-attachments/assets/9b97f1b6-8c16-45cb-90f8-ac0348f00216)  ![Image](https://github.com/user-attachments/assets/92dda9af-d6bb-4973-8655-4f7277f4715e)
- <table> 
-<tr>
- <th><b>Parameters</b></th>
- <th><b>MOSFET1</b></th>
- <th><b>MOSFET2</b></th>
- <th><b>MOSFET3</b></th>
-</tr>
-<tr>
-    <td>Model</td>
-    <td>CMOSP</td>
-    <td>CMOSP</td>
-    <td>CMOSN</td>
-</tr>
-<tr>
-    <td>Length</td>
-    <td>180nm</td>
-    <td>180nm</td>
-    <td>180nm</td>
-</tr>
-<tr>
-    <td> Width</td>
-    <td>70µm</td>
-    <td>70µm</td>
-    <td>100.0217999um</td>
-</tr>
-<tr>
-    <td>V<sub>th</sub></td>
-    <td> -0.509V</td>
-    <td> -0.509V</td>
-    <td> 0.495V</td>
-</tr>
-    <tr>
-      <td>Current(I)</td>
-      <td>  0.27mA </td>
-      <td>  0.270211mA </td>
-      <td> 0.270211mA </td>
-    </tr>
-    <tr>
-      <td>Supply Voltage</td>
-      <td> 1.8V</td>
-      <td> 1.8V</td>
-      <td> --- </td>
-    </tr>
-     <tr>
-      <td>Biased Voltage</td>
-      <td> --- </td>
-      <td> --- </td>
-      <td> 0.5697V</td>
-    </tr>
-</table>
-From dc analysis: <br>
-V<sub>out</sub> = 1.18143, which is nearly equal to V<sub>x</sub>  i.e  1.18498</br>
-I<sub>ref</sub> =0.27mA and I<sub>d</sub> = 0.270211 <br> There is small diviation due to Lamda Effect.
+Vdd=1.8 V.<br>
+P <=1 mW.<br>
+Av>-10 V/V.<br>
 
-**Transient Analysis**
+## Circuit Diagram
 
-![Image](https://github.com/user-attachments/assets/caf81b29-cc6f-4c73-8199-200d1dddf341)
-The input voltage given for N-MOS is 0.5 and amplitude of 9mV with frequency of 1kHz. <br>
-Can observe the output voltage V<sub>out</sub> = 1.42V
- **AC Analysis**
- 
-![Image](https://github.com/user-attachments/assets/d4cab0bb-1981-4f63-8ba8-557eb7cdd56f)
-The obtained gain A<sub>v</sub> is 29.488<sub>dB</sub>. <br>
-29.488 - 3 = 26.488<sub>dB</sub>. <br>
-The frequency for this particular dB is 58.237MHz, the bandwidth can be calculated as f<sub>H</sub> - f<sub>L</sub>. <br>
-= 58.237MHz - 1Hz <br>
-= 57.237MHz <br>
-## For 1:2 Aspect Ratio
- <table> 
-<tr>
- <th><b>Parameters</b></th>
- <th><b>MOSFET1</b></th>
- <th><b>MOSFET2</b></th>
- <th><b>MOSFET3</b></th>
-</tr>
-<tr>
-    <td>Model</td>
-    <td>CMOSP</td>
-    <td>CMOSP</td>
-    <td>CMOSN</td>
-</tr>
-<tr>
-    <td>Mosfet Length</td>
-    <td>180nm</td>
-    <td>180nm</td>
-    <td>180nm</td>
-</tr>
-<tr>
-    <td>Mosfet Width</td>
-    <td>70um</td>
-    <td>140µm</td>
-    <td>140u</td>
-</tr>
-<tr>
-    <td>Threshold Voltage</td>
-    <td> -0.509V</td>
-    <td> -0.509V</td>
-    <td> 0.495V</td>
-</tr>
-    <tr>
-      <td>Current(I)</td>
-      <td> I<sub>ref</sub> = 0.185mA </td>
-      <td> I<sub>d</sub> = 0.373554mA </td>
-      <td> I<sub>d</sub> = 0.373554</td>
-    </tr>
-    <tr>
-      <td>Supply Voltage</td>
-      <td> 1.8V</td>
-      <td> 1.8V</td>
-      <td> --- </td>
-    </tr>
-     <tr>
-      <td>Biased Voltage</td>
-      <td> --- </td>
-      <td> --- </td>
-      <td> 0.5V</td>
-    </tr>
-</table>
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/9fa2f609fed7155cfe55a70d612212fdb9d3b0b4/images/Screenshot%202025-04-06%20183740.png)
 
-<br>**DC Analysis**</br>
 
-![Image](https://github.com/user-attachments/assets/33a0610a-3d0d-4107-829a-96188918d8c4)
-From dc analysis: <br>
-V<sub>out</sub> = 1.158341V	 
-I<sub>ref</sub> =  0.185mA
 
-**Transient Analysis**
+**Calculation**:
 
-![Image](https://github.com/user-attachments/assets/ac0ea772-5f05-40d7-bad1-19edac3cab27)
-**AC Analysis**
+Drain current equation is given by:
 
-![Image](https://github.com/user-attachments/assets/4e4c277d-b1dc-49bb-b455-00c224e7fc59)
-The obtained gain from the simulation is 29.23<sub>dB</sub>. <br>
-29.23 - 3 = 26.23<sub>dB</sub>. <br>
-The frequency for this particular dB is 27.426MHz, the bandwidth can be calculated as f<sub>H</sub> - f<sub>L</sub>. <br>
-= 27.426MHz - 1Hz <br>
-= 26.426MHz <br>
-## Bonus Question 
+ID = (1/2)μnCox(W/L)(VGS - Vth)^2<br>
+ITotal = P / VDD<br>
+ITotal = Iref + Ix<br>
+For 1:1 ratio Iref = Ix<br>
+Iref(2) = ITotal<br>
+Iref = ITotal/2<br>
+ITotal = 1 mW/1.8 V<br>
+ITotal = 0.555 mA<br>
+Iref = 0.555 m/2<br>
+Therefore, Iref = 0.2777 mA.<br>
 
-![Image](https://github.com/user-attachments/assets/8af0aa43-3374-4ed9-be95-1fd4dbcbd5d4)
-<ins>Observed Table</ins> <br>
-For I<sub>ref</sub> = 100u <br>
-
-  <table> 
-<tr>
- <th><b>I<sub>out(expected)</sub>(A)</b></th>
- <th><b>I<sub>out(appeared)</sub>(A)</b></th>
- <th><b>(W/L)<sub>2</sub>(m)</b></th>
- <th><b>(W/L)<sub>1</sub>(m)</b></th>
- <th><b>V<sub>x</sub>(V)</b></th>
- <th><b>V<sub>out</sub>(V)</b></th>
-</tr>
-<tr>
-    <td>100µ</td>
-    <td>103.06µ</td>
-    <td>(180n/180n)</td>
-    <td>(180n/180n)</td>
-    <td>1.275V</td>
-    <td>1.71512V</td>
-</tr>
-<tr>
-    <td>100µ</td>
-    <td>100.7µ</td>
-    <td>(500n/500n)</td>
-    <td>(500n/500n)</td>
-    <td>1.4385V</td>
-    <td>1.717V</td>
-</tr>
-<tr>
-    <td>100µ</td>
-    <td>100.648µ</td>
-    <td>(1µ/1µ)</td>
-    <td>(1µ/1µ)</td>
-    <td>1.39827V</td>
-    <td>1.717V</td>
-</tr>
-<tr>
-    <td>200µ</td>
-    <td>197.637µ</td>
-    <td>(1µ/1µ)</td>
-    <td>(1µ/2µ)</td>
-    <td>1.39727V</td>
-    <td>1.63734V</td>
-</tr>
-    <tr>
-      <td>50µ</td>
-    <td>52.1312µ</td>
-    <td>(1µ/1µ)</td>
-    <td>(1µ/0.5µ)</td>
-    <td>1.3972V</td>
-    <td>1.75725V</td>
-    </tr>
-   
-</table> 
-
-## Part B
-<b>Design the differential amplifier using the same design specification as experiment 3(differential amplifier). Perform DC, Transient, AC analysis for this.</b> <br>
-
-![Image](https://github.com/user-attachments/assets/7b197f26-3a70-479d-8e32-ee017eaa928e)
+**Case 1** : 1:1 Current mirror
 
 **DC Analysis**
 
+**Case1: L=180nm**
 
-![Image](https://github.com/user-attachments/assets/7833efce-2fe1-42f1-9aa8-cca3333b25be)
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184109.png)
 
-**Transient Analysis**
+PMOSFET = length is 180nm, width is 10um<br>
+NMOSFET = length is 180nm, width is 114.025um<br>
+Vout= 0.967276V<br>
+Vx= 0.967276V<br>
+Iref = 0.277mA<br>
 
-![Image](https://github.com/user-attachments/assets/7a7e4b76-1c6a-4f2c-9185-b767e4045f97)
+**Case2: L=500nm**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184118.png)
+
+PMOSFET = length is 500nm, width is 10um<br>
+NMOSFET = length is 500nm, width is 207.617um<br>
+Vout= 0.644713V<br>
+Vx= 0.644703V<br>
+Iref = 0.277mA<br>
+
+**Case3: L=1um**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184126.png)
+
+PMOSFET = length is 1um, width is 10um<br>
+NMOSFET = length is 1um, width is 251.54um<br>
+Vout= 0.293193V<br>
+Vx= 0.293177V<br>
+Iref = 0.277mA<br>
+
+### Tabular column:
+|  Length  |            Width           |   V<sub>x</sub>  | V<sub>out</sub>  |   I<sub>ref</sub>|
+|----------|----------------------------|------------------|------------------|------------------|
+|   180nm  | Pmos= 10u; Nmos=114.025u   |    0.967276V     |     0.967276V    |    0.277mA       |
+|   500nm  | Pmos= 10u; Nmos=207.617u   |    0.644703V     |     0.644713V    |    0.277mA       |
+|    1um   | Pmos= 10u; Nmos=251.54u    |    0.293177V     |     0.293193V    |    0.277mA       |
+
+
+### Transient analysis:
+1.Case 1: 180nm
+![Image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184142.png)
+* Peak to Peak volatge = 1.934V
+* Maximum output swing = Vdd-Vov2+Vov3 = 1.8-(-0.00847-0.36)+(0.5-0.36)= 2.29V
+
+<br>
+
+2.Case 2: 500nm
+![Image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184159.png)
+* Peak to Peak volatge = 1.28V
+* Maximum output swing = Vdd-Vov2+Vov3 = 1.8-(-0.00000907-0.36)+(0.5-0.36)= 2.29V
+
+<br>
+
+3.Case 3: 1um
+![Image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184213.png)
+* Peak to Peak volatge = 0.607V
+* Maximum output swing = Vdd-Vov2+Vov3 = 1.8-(0.0000165-0.36)+(0.5-0.36)= 2.29V
+
+<br>
 
 **AC Analysis**
 
-![Image](https://github.com/user-attachments/assets/0e8cc948-4f91-45b8-8eef-55613092c065)
+**Case1: L=180nm**
 
-The gain of the circuit is 30.977dB.
-<br>BandWdith is 187.35MHz - 1Hz = 186.35MHz
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184226.png)
 
-## Inference
+**Case2: L=500nm**
 
-<br> 1.Current mirrors copy a reference current accurately, making them useful in many electronic circuits.</br>
-<br> 2.Changes in manufacturing, power supply, or temperature can affect performance, but using a stable reference current helps reduce these effects.</br>
-<br> 3.NMOS current mirrors work faster, while PMOS current mirrors provide better stability and accuracy.</br>
-<br> 4.Small errors occur due to transistor properties, but using longer transistors or special designs can fix this.</br>
-<br> 5.Larger transistor sizes improve accuracy, but they also take up more space on the chip.</br>
-<br> 6.DC analysis confirms the circuit is working correctly, with the mirrored current closely matching the expected values.</br>
-<br> 7.AC analysis shows the circuit has a high gain and wide frequency range, making it good for high-speed applications.</br>
-<br> 8.Transient analysis proves that the circuit responds well to changing signals, meaning it works reliably in real-world use.</br>
-<br> 9.Using current mirrors in amplifiers gives high gain (~31 dB) and wide bandwidth (~186 MHz), which is great for precise signal processing.</br>
-<br> 10.Choosing the right transistor size and reference current is important to get the best balance between power, accuracy, and performance.</br>
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184241.png)
+
+**Case3: L=1um**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184256.png)
+
+### Tabular column:
+|  Length  |  3dB Gain   |  3dB Bandwidth   | 
+|----------|-------------|------------------|
+|   180nm  |    27dB     |   265.185MHz     |
+|   500nm  |    36dB     |   52.4645MHz     |     
+|    1um   |    35.75dB  |   39.4948MHz     |   
+
+### Inference:
+* Reference current is copied or mirrored for other two mosfets.The output currentis exactly equal to the reference current.
+* The output current remains the same regardless of the connected load, as long as the transistor stays in the saturation region
+* V<sub>x</sub> and V<sub>out</sub> will be same when current gets mirrored.
+* As length increases V<sub>x</sub> and V<sub>out</sub> decreases.
+* As gain increases bandwidth decreases.
+* As the refence current is 0.277mA and doing 1:1 ratio of current mirroring the Current must be copied of the same that is 0.277mA.
+* In transient analysis we see the maximum output swing caused.
+  
+<br>
+
+**Case 2** : 1:2 Current mirror
+
+**Circuit Diagram**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184313.png)
+
+
+
+
+### Components :
+PMOSFET-2, NMOSFET- 1, supply volatage-2, current source-1.
+
+### Procedure:
+
+1. Build the circuit as per the circuit diagram using LTspice.
+2. Set the Vdd as 1.8V.
+3. Download the library file.
+4. Create a folder. Save the library file and LTspice file to the folder.
+5. Import the library file to LTspice using spice directive(.op).
+6. Find the current value for the given power rating.
+7.  Set the mosfet model name CMOSN for NMOSFET and CMOSP for PMOSFET as given in the library file, length as 180nm and vary the width  of NMOSFET till you get the exact Q point. Set the gate volatge of NMOSFET as 0.5V. 
+8. DC analysis: In edit simulation option, change to dc offset to get list of values obtained from the circuit. We should get the calculated current value in the simulation result.So that we need to vary the value of width since width is directly proportional to Drain current(Id) keeping other parameters constant. Since we are doing current mirroring the current of both mosfets should be same as the reference current even the output also should match too. 
+9. Transient analysis: In edit simulation option, change from dc offset to transient. Set the dc offset as 0.5V, Amplitude 5mV, frequency 1KHz. Keep stop time for 3ms and run to get the expected waveform.Find the maximum output swing.
+10. AC analysis : In edit simulation option, change from transient to ac analysis. Set type of sweep as decade, number of points per decade as 20, start and stop frequency as 0.1Hz and 1THz to get the expected ac waveform. Note down the 3dB gain of the circuit and its bandwidth.
+
+<br>
+
+### Calculations:
+* Power <= 1mW
+* Vdd = 1.8V
+* I<sub>total</sub> = power/Vdd = 1mW/1.8 = 55.5mA
+* I<sub>D</sub>= I<sub>total</sub>/3 = 0.185mA.
+* 1:2 ratio = 0.185mA : 0.37mA.
+
+<br>
+
+**DC Analysis**
+
+**Case1: L=180nm**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184332.png)
+
+PMOS1 : L=180nm ; W=70um <br>
+PMOS2 : L=180nm ; W=140um <br>
+NMOS11 = L=180nm ; W=135.867um<br>
+Vout= 1.20094V<br>
+Vx= 1.20934V<br>
+Iref = 0.185mA<br>
+
+**Case2: L=500nm**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184344.png)
+
+PMOS1 : L=500nm ; W=70um <br>
+PMOS2 : L=500nm ; W=140um <br>
+NMOS11 = L=500nm ; W=256.773um<br>
+Vout= 1.15935V<br>
+Vx= 1.16085V<br>
+Iref = 0.185mA<br>
+
+**Case3: L=1um**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184358.png)
+
+PMOS1 : L=1um ; W=70um <br>
+PMOS2 : L=1um ; W=140um <br>
+NMOS11 = L=1um ; W=307.294um<br>
+Vout= 1.08026V<br>
+Vx= 1.07969V<br>
+Iref = 0.185mA<br>
+
+### Tabular column:
+|  Length  |                Width            |   V<sub>x</sub>  | V<sub>out</sub> | I<sub>ref</sub>  |
+|----------|---------------------------------|------------------|-----------------|------------------|
+|   180nm  | Pmos= 70u,140u; Nmos=135.867um  |     1.20934V     |     1.20094V    | 0.185mA : 0.37mA |
+|   500nm  | Pmos= 70u,140u; Nmos=256.773um  |     1.16085V     |     1.15935V    | 0.185mA : 0.37mA |
+|    1um   | Pmos= 70u,140u; Nmos=307.294um  |    1.07969V      |     1.08026V    | 0.185mA : 0.37mA |
+
+
+### Transient analysis:
+1.Case 1: 180nm
+![Image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184419.png)
+* Peak to Peak volatge = 2.39V
+* Maximum output swing = Vdd-Vov2+Vov3 = 1.8-(-0.00847-0.36)+(0.5-0.36)= 2.30V
+
+<br>
+
+2.Case 2: 500nm
+![Image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184430.png)
+* Peak to Peak volatge = 2.25V
+* Maximum output swing = Vdd-Vov2+Vov3 = 1.8-(-0.0015-0.36)+(0.5-0.36)= 2.3015V
+
+<br>
+
+3.Case 3: 1um
+![Image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184441.png)
+* Peak to Peak volatge = 2.048V
+* Maximum output swing = Vdd-Vov2+Vov3 = 1.8-(0.000575-0.36)+(0.5-0.36)= 2.2V
+
+**AC Analysis**
+
+**Case1: L=180nm**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184453.png)
+
+**Case2: L=500nm**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184509.png)
+
+**Case3: L=1um**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184535.png)
+
+### Tabular column:
+|  Length  |  3dB Gain   |  3dB Bandwidth   | 
+|----------|-------------|------------------|
+|   180nm  |  26.212dB   |   105.81654MHz   |
+|   500nm  |  34.71dB    |   29.731326MHz   |     
+|    1um   |  37dB       |   18.6247MHz     |   
+
+### Inference:
+* Reference current is copied or mirrored for other two mosfets.The output currentis exactly equal to the reference current.
+* The output current remains the same regardless of the connected load, as long as the transistor stays in the saturation region
+* V<sub>x</sub> and V<sub>out</sub> will be same when current gets mirrored.
+* As length increases V<sub>x</sub> and V<sub>out</sub> decreases.
+* As gain increases bandwidth decreases.
+* As the refence current is 0.277mA and doing 1:2 ratio of current mirroring the Current must be copied of the same that is in the form of 0.185mA : 0.37mA..
+* In transient analysis we see the maximum output swing caused.
+
+<br>
+
+**Part B**
+
+Aim : Design the diffrential amplifier having VDD=2V, P<=1mW, Vicm =1V as per the 3rd experiment and perform DC, Transient , AC analysis.<br>
+
+**Circuit Diagram**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184555.png)
+
+### Components:
+PMOSFET-2, NMOSFET- 4, supply volatage-4, current source-1, ground, wires.
+
+### Circuit overview:
+1.Differential Pair (M3, M4):
+* M3 and M4 form a differential pair using NMOS transistors.
+* They receive differential input signals and control the output voltage.
+
+<br>
+
+2.Active Load (M1, M2):
+* M1 and M2 are PMOS transistors serving as a current mirror load.
+* This helps in converting the differential input signal into a single-ended output.
+
+<br>
+
+3.Current Source (M5, M6, I1):
+* M6 is an NMOS transistor acting as a current source to bias the differential pair.
+* I1 (0.25 mA) sets the tail current, ensuring proper operation.
+
+<br>
+
+4.Biasing Voltages (V1, V2, V3, V5):
+* V1 and V2 (1V) provide gate biasing for M3 and M4.
+* V3 and V5 (2V) power the PMOS transistors and ensure proper operation.
+
+<br>
+  
+5.Output (Vout):
+* The output is taken from the common node of M2 and M4.
+* It provides an amplified voltage signal.
+
+<br>
+
+### Calculation:
+* P=1mW
+* I<sub>total</sub> = P/V = 1mW/2V =0.5mA
+* I<sub>D1</sub> = I<sub>D2</sub> = I<sub>total</sub>/2 = I<sub>ref</sub> =0.25mA 
+* V<sub>DD</sub>= 2V
+* V<sub>inCM</sub>=1V
+
+<br>
+
+
+**DC Analysis**
+
+**Case1: L=180nm**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184631.png)
+
+M1,M2 = W=70um<br>
+M3, M4 = W=238.7um<br>
+M5 = W=70um<br>
+M6 = W=140um<br>
+Vout= 1.39017V<br>
+Iref = 0.25mA<br>
+
+**Case2: L=500nm**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184654.png)
+
+M1,M2 = W=70um<br>
+M3, M4 = W=693.6um<br>
+M5 = W=70um<br>
+M6 = W=140um<br>
+Vout= 1.32674V<br>
+Iref = 0.25mA<br>
+
+**Case3: L=1um**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184723.png)
+
+M1,M2 = W=70um<br>
+M3, M4 = W=223.35um<br>
+M5 = W=70um<br>
+M6 = W=141um<br>
+Vout= 1.22711V<br>
+Iref = 0.25mA<br>
+
+### Tabular column:  
+|  Length  |                       Width                   |  V<sub>out</sub> | I<sub>ref</sub>  |
+|----------|-----------------------------------------------|------------------|------------------|
+|   180nm  | M1,M2=70um,M3, M4 =238.7um,M5 =70um, M6=140um |      1.39017V    |  0.277mA         |
+|   500nm  | M1,M2=70um,M3, M4 =693.6um,M5 =70um, M6=140um |      1.32674V    |  0.277mA         |
+|    1um   | M1,M2=70um,M3, M4 =223.35um,M5 =70um, M6=141um|      1.22711V    |  0.277mA         |
+
+<br>
+
+### Transient analysis:
+1.Case 1: 180nm
+![Image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184749.png)
+* Peak to Peak volatge = 2.7794V
+
+<br>
+
+2.Case 2: 500nm
+![Image](https://github.com/srujanjainhn/LIC-LAB/blob/8d51eb25f890f100536d5276933432c18b1ab4d0/images/current%20mirror.%5C/Screenshot%202025-04-06%20184803.png)
+* Peak to Peak volatge = 2.653V
+
+<br>
+
+3.Case 3: 1um
+![Image](https://github.com/srujanjainhn/LIC-LAB/blob/47fb53efd9d5c8217e95bd2405adca9f6a413f92/images/current%20mirror.%5C/Screenshot%202025-04-06%20192945.png)
+* Peak to Peak volatge = 2.453V
+
+<br>
+
+**AC Analysis**
+
+**Case1: L=180nm**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/47fb53efd9d5c8217e95bd2405adca9f6a413f92/images/current%20mirror.%5C/Screenshot%202025-04-06%20192957.png)
+
+**Case2: L=500nm**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/47fb53efd9d5c8217e95bd2405adca9f6a413f92/images/current%20mirror.%5C/Screenshot%202025-04-06%20193009.png)
+
+**Case3: L=1um**
+
+![image](https://github.com/srujanjainhn/LIC-LAB/blob/47fb53efd9d5c8217e95bd2405adca9f6a413f92/images/current%20mirror.%5C/Screenshot%202025-04-06%20193024.png)
+
+### Tabular column:
+|  Length  |  3dB Gain   |  3dB Bandwidth   | 
+|----------|-------------|------------------|
+|   180nm  |  32dB       |   107.9033MHz    |
+|   500nm  |  41.131dB   |   17.075083MHz   |     
+|    1um   |  43.32dB    |   24.278305MHz   |   
+
+### Inference:
+
+1.DC Analysis:
+* As the transistor length increases, the output voltage (Vout) decreases.
+* This happens because longer channel lengths increase the resistance, affecting the current flow and voltage distribution.
+* Reference current (Iref) remains constant (0.277mA) across different lengths.
+* This shows that the current source (M5 & M6) is properly designed to maintain a steady bias.
+
+<br>
+
+2.Transient Analysis:
+* Peak-to-peak voltage (Vpp) decreases with increasing transistor length.
+* Longer transistors have higher parasitic capacitances, which slow down the signal response, reducing output swing.
+* Shorter channel transistors (180nm) provide better signal swings, making them preferable for high-speed applications.
+
+<br>
+
+
+3.AC Analysis:
+* 3dB Gain increases as transistor length increases.
+180nm → 32dB\
+500nm → 41.13dB\
+1µm → 43.32dB\
+* Longer transistors reduce channel-length modulation, leading to better gain performance.
+* Bandwidth decreases with increasing transistor length.
+180nm → 107.9MHz\
+500nm → 17.08MHz\
+1µm → 24.28MHz\
+* Shorter transistors have lower capacitance, allowing higher frequencies to pass, resulting in a wider bandwidth.
